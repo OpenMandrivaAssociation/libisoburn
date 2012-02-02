@@ -28,10 +28,15 @@ Group:		System/Libraries
 Shared libraries of libisoburn for software using it.
 
 %description
-libisoburn is a frontend for libraries libburn and libisofs which enables creation and expansion of ISO-9660 filesystems on all CD/DVD/BD media supported by libburn. 
-This includes media like DVD+RW, which do not support multi-session management on media level and even plain disk files or block devices.
-The price for that is thorough specialization on data files in ISO-9660 filesystem images. So libisoburn is not suitable for audio 
-(CD-DA) or any other CD layout which does not entirely consist of ISO-9660 sessions.
+libisoburn is a frontend for libraries libburn and libisofs which
+enables creation and expansion of ISO-9660 filesystems on all CD/DVD/BD
+media supported by libburn. 
+This includes media like DVD+RW, which do not support multi-session management
+on media level and even plain disk files or block devices.
+The price for that is thorough specialization on data files
+in ISO-9660 filesystem images. So libisoburn is not suitable for audio 
+(CD-DA) or any other CD layout which does not entirely consist
+of ISO-9660 sessions.
 
 %package -n %devname
 Summary:	CD-ROM image access library - development headers
