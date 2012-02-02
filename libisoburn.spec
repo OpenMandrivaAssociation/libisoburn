@@ -1,12 +1,9 @@
-%define	version	1.1.8
-%define	rel	1
-
 %define	major	1
 %define	libname	%mklibname	isoburn	%major
 %define	devname	%mklibname	isoburn	-d
 
 Name:		libisoburn
-Version:	1.1.8
+Version:	1.2.0
 Summary:	Enables creation and expansion of ISO-9660 filesystems on all CD/DVD media supported by libburn
 Release:	1
 Source:		http://downloads.sourceforge.net/cdemu/%name-%version.tar.gz
