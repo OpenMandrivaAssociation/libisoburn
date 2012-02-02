@@ -6,7 +6,7 @@ Name:		libisoburn
 Version:	1.2.0
 Summary:	Enables creation and expansion of ISO-9660 filesystems on all CD/DVD media supported by libburn
 Release:	1
-Source:		http://downloads.sourceforge.net/cdemu/%name-%version.tar.gz
+Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
 Group:		System/Libraries
 License:	GPLv2+
 URL:		http://libburnia-project.org
