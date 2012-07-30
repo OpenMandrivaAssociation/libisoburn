@@ -3,19 +3,19 @@
 %define	devname	%mklibname	isoburn	-d
 
 Name:		libisoburn
-Version:	1.2.0
-Summary:	Enables creation and expansion of ISO-9660 filesystems on all CD/DVD media supported by libburn
+Version:	1.2.4
+Summary:	Enables creation and expansion of ISO-9660 filesystems
 Release:	1
 Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
 Group:		System/Libraries
 License:	GPLv2+
 URL:		http://libburnia-project.org
 
-BuildRequires:	libburn-devel >= 1.1.6
-BuildRequires:	libacl-devel
+BuildRequires:	libburn-devel >= 1.2.4
+BuildRequires:	acl-devel
 BuildRequires:	glib2-devel
 BuildRequires:	doxygen
-BuildRequires:	libisofs-devel >= 1.1.6
+BuildRequires:	libisofs-devel >= 1.2.4
 BuildRequires:	zlib-devel
 
 
@@ -79,7 +79,7 @@ touch NEWS
 autoreconf -fi
 
 %configure --disable-static
-%make
+%make LIBS='-lpthread -lreadline'
 doxygen doc/doxygen.conf
 
 %install
