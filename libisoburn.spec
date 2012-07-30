@@ -14,6 +14,7 @@ URL:		http://libburnia-project.org
 BuildRequires:	libburn-devel >= 1.2.4
 BuildRequires:	acl-devel
 BuildRequires:	glib2-devel
+BuildRequires:	readline-devel
 BuildRequires:	doxygen
 BuildRequires:	libisofs-devel >= 1.2.4
 BuildRequires:	zlib-devel
