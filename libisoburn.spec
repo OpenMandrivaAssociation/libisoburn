@@ -110,3 +110,21 @@ rm -f %{buildroot}/%{_libdir}/{*.la,*.a}
 %{_infodir}/xorriso.info*
 %{_infodir}/xorrecord.info*
 %{_infodir}/xorrisofs.info*
+
+
+%changelog
+* Mon Jul 30 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.2.4-1
++ Revision: 811464
+- BR: readline-devel
+- version update  1.2.4
+
+* Thu Feb 02 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.2.0-1
++ Revision: 770667
+- desc line too long fix
+- source libisobur-1.2.0.tar.gz added
+- version update 1.2.0
+
+* Wed Nov 23 2011 Alexander Khrukin <akhrukin@mandriva.org> 1.1.8-1
++ Revision: 732861
+- imported package libisoburn
+
