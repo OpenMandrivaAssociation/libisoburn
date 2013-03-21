@@ -1,31 +1,29 @@
-%define	major	1
-%define	libname	%mklibname	isoburn	%major
-%define	devname	%mklibname	isoburn	-d
+%define major 1
+%define libname %mklibname isoburn %{major}
+%define devname %mklibname isoburn -d
 
 Name:		libisoburn
-Version:	1.2.4
-Summary:	Enables creation and expansion of ISO-9660 filesystems
+Version:	1.2.8
 Release:	1
-Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
+Summary:	Enables creation and expansion of ISO-9660 filesystems
 Group:		System/Libraries
 License:	GPLv2+
 URL:		http://libburnia-project.org
+Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
 
-BuildRequires:	libburn-devel >= 1.2.4
-BuildRequires:	acl-devel
-BuildRequires:	glib2-devel
-BuildRequires:	readline-devel
 BuildRequires:	doxygen
-BuildRequires:	libisofs-devel >= 1.2.4
-BuildRequires:	zlib-devel
+BuildRequires:	acl-devel
+BuildRequires:	readline-devel
+BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(libburn-1) >= %{version}
+BuildRequires:	pkgconfig(libisofs-1) >= %{version}
+BuildRequires:	pkgconfig(zlib)
 
-
-%package -n %libname
+%package -n %{libname}
 Summary:	CD-ROM image access library - shared library
 Group:		System/Libraries
 
-
-%description -n %libname
+%description -n %{libname}
 Shared libraries of libisoburn for software using it.
 
 %description
@@ -39,14 +37,14 @@ in ISO-9660 filesystem images. So libisoburn is not suitable for audio
 (CD-DA) or any other CD layout which does not entirely consist
 of ISO-9660 sessions.
 
-%package -n %devname
+%package -n %{devname}
 Summary:	CD-ROM image access library - development headers
 Group:		Development/C
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	libisoburn-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}-%{release}
 
-%description -n %devname
+%description -n %{devname}
 The libisoburn-devel package contains libraries and header files for
 developing applications that use libisoburn.
 
@@ -86,14 +84,11 @@ doxygen doc/doxygen.conf
 %install
 %makeinstall_std
 
-rm -f %{buildroot}/%{_libdir}/{*.la,*.a}
+%files -n %{libname}
+%{_libdir}/%{name}*.so.%{major}*
 
-
-%files -n %libname
+%files -n %{devname}
 %doc AUTHORS COPYING COPYRIGHT README ChangeLog
-%{_libdir}/%{name}*.so.*
-
-%files -n %devname
 %doc doc/html
 %{_includedir}/%{name}
 %{_libdir}/%{name}.so
@@ -110,21 +105,4 @@ rm -f %{buildroot}/%{_libdir}/{*.la,*.a}
 %{_infodir}/xorriso.info*
 %{_infodir}/xorrecord.info*
 %{_infodir}/xorrisofs.info*
-
-
-%changelog
-* Mon Jul 30 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.2.4-1
-+ Revision: 811464
-- BR: readline-devel
-- version update  1.2.4
-
-* Thu Feb 02 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.2.0-1
-+ Revision: 770667
-- desc line too long fix
-- source libisobur-1.2.0.tar.gz added
-- version update 1.2.0
-
-* Wed Nov 23 2011 Alexander Khrukin <akhrukin@mandriva.org> 1.1.8-1
-+ Revision: 732861
-- imported package libisoburn
 
