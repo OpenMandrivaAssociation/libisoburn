@@ -3,7 +3,7 @@
 %define devname %mklibname isoburn -d
 
 Name:		libisoburn
-Version:	1.2.8
+Version:	1.3.0
 Release:	1
 Summary:	Enables creation and expansion of ISO-9660 filesystems
 Group:		System/Libraries
