@@ -2,13 +2,13 @@
 %define libname %mklibname isoburn %{major}
 %define devname %mklibname isoburn -d
 
+Summary:	Enables creation and expansion of ISO-9660 filesystems
 Name:		libisoburn
 Version:	1.3.0
 Release:	1
-Summary:	Enables creation and expansion of ISO-9660 filesystems
 Group:		System/Libraries
 License:	GPLv2+
-URL:		http://libburnia-project.org
+Url:		http://libburnia-project.org
 Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
 
 BuildRequires:	doxygen
@@ -29,7 +29,7 @@ Shared libraries of libisoburn for software using it.
 %description
 libisoburn is a frontend for libraries libburn and libisofs which
 enables creation and expansion of ISO-9660 filesystems on all CD/DVD/BD
-media supported by libburn. 
+media supported by libburn.
 This includes media like DVD+RW, which do not support multi-session management
 on media level and even plain disk files or block devices.
 The price for that is thorough specialization on data files
@@ -47,7 +47,6 @@ Requires:	%{libname} = %{version}-%{release}
 %description -n %{devname}
 The libisoburn-devel package contains libraries and header files for
 developing applications that use libisoburn.
-
 
 %package -n xorriso-isoburn
 Summary:	ISO-9660 and Rock Ridge image manipulation tool
@@ -67,7 +66,7 @@ Filesystem manipulation capabilities surpass those of mkisofs. Xorriso
 is especially suitable for backups, because of its high fidelity of
 file attribute recording and its incremental update sessions. Optical
 supported media: CD-R, CD-RW, DVD-R, DVD-RW, DVD+R, DVD+R DL, DVD+RW,
-DVD-RAM, BD-R and BD-RE. 
+DVD-RAM, BD-R and BD-RE.
 
 %prep
 %setup -q
