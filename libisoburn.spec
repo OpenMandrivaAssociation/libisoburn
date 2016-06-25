@@ -4,8 +4,8 @@
 
 Summary:	Enables creation and expansion of ISO-9660 filesystems
 Name:		libisoburn
-Version:	1.3.8
-Release:	2
+Version:	1.4.2
+Release:	1
 Group:		System/Libraries
 License:	GPLv2+
 Url:		http://libburnia-project.org
@@ -105,4 +105,3 @@ doxygen doc/doxygen.conf
 %{_infodir}/xorriso.info*
 %{_infodir}/xorrecord.info*
 %{_infodir}/xorrisofs.info*
-
