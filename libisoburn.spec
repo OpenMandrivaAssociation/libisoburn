@@ -5,7 +5,7 @@
 Summary:	Enables creation and expansion of ISO-9660 filesystems
 Name:		libisoburn
 Version:	1.4.2
-Release:	1
+Release:	4
 Group:		System/Libraries
 License:	GPLv2+
 Url:		http://libburnia-project.org
@@ -40,21 +40,20 @@ of ISO-9660 sessions.
 %package -n %{devname}
 Summary:	CD-ROM image access library - development headers
 Group:		Development/C
-Provides:	%{name}-devel = %{version}-%{release}
-Provides:	libisoburn-devel = %{version}-%{release}
-Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel = %{EVRD}
+Provides:	libisoburn-devel = %{EVRD}
+Requires:	%{libname} = %{EVRD}
 
 %description -n %{devname}
 The libisoburn-devel package contains libraries and header files for
 developing applications that use libisoburn.
 
-%package -n xorriso-isoburn
+%package -n xorriso
 Summary:	ISO-9660 and Rock Ridge image manipulation tool
 Group:		Archiving/Cd burning
-URL:		http://scdbackup.sourceforge.net/xorriso_eng.html
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
 
-%description -n xorriso-isoburn
+%description -n xorriso
 Xorriso is a program which copies file objects from POSIX compliant
 filesystems into Rock Ridge enhanced ISO-9660 filesystems and allows
 session-wise manipulation of such filesystems. It can load management
@@ -93,7 +92,7 @@ doxygen doc/doxygen.conf
 %{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/%{name}*.pc
 
-%files -n xorriso-isoburn
+%files -n xorriso
 %{_bindir}/osirrox
 %{_bindir}/xorrecord
 %{_bindir}/xorriso
