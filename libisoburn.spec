@@ -75,7 +75,7 @@ touch NEWS
 
 autoreconf -fi
 
-%configure --disable-static
+%configure --disable-static --enable-pkg-check-modules
 %make LIBS='-lpthread -lreadline'
 doxygen doc/doxygen.conf
 
