@@ -15,8 +15,8 @@ BuildRequires:	doxygen
 BuildRequires:	acl-devel
 BuildRequires:	readline-devel
 BuildRequires:	pkgconfig(glib-2.0)
-BuildRequires:	pkgconfig(libburn-1) >= %{version}
-BuildRequires:	pkgconfig(libisofs-1) >= %{version}
+BuildRequires:	pkgconfig(libburn-1)
+BuildRequires:	pkgconfig(libisofs-1)
 BuildRequires:	pkgconfig(zlib)
 
 %package -n %{libname}
