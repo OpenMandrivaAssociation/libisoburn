@@ -5,7 +5,7 @@
 Summary:	Enables creation and expansion of ISO-9660 filesystems
 Name:		libisoburn
 Version:	1.4.6
-Release:	2
+Release:	3
 Group:		System/Libraries
 License:	GPLv2+
 Url:		http://libburnia-project.org
@@ -54,7 +54,7 @@ Group:		Archiving/Cd burning
 Requires:	%{libname} = %{EVRD}
 # (tpg) looks like these two are needed
 Requires:	%{_lib}isofs6 >= %{version}
-Requires:	%{_lib}lib64burn4 >= %{version}
+Requires:	%{_lib}burn4 >= %{version}
 
 Obsoletes:	xorriso-isoburn < %{EVRD}
 Provides:	xorriso-isoburn = %{EVRD}
