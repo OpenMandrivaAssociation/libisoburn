@@ -73,6 +73,9 @@ DVD-RAM, BD-R and BD-RE.
 %build
 touch NEWS
 
+export CC=gcc
+export CXX=g++
+
 autoreconf -fi
 
 %configure --disable-static --enable-pkg-check-modules
