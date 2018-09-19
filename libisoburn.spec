@@ -4,7 +4,7 @@
 
 Summary:	Enables creation and expansion of ISO-9660 filesystems
 Name:		libisoburn
-Version:	1.4.8
+Version:	1.5.0
 Release:	1
 Group:		System/Libraries
 License:	GPLv2+
@@ -74,7 +74,7 @@ supported media: CD-R, CD-RW, DVD-R, DVD-RW, DVD+R, DVD+R DL, DVD+RW,
 DVD-RAM, BD-R and BD-RE.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 touch NEWS
@@ -85,11 +85,11 @@ export CXX=g++
 autoreconf -fi
 
 %configure --disable-static --enable-pkg-check-modules
-%make LIBS='-lpthread -lreadline'
+%make_build LIBS='-lpthread -lreadline'
 doxygen doc/doxygen.conf
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/%{name}*.so.%{major}*
