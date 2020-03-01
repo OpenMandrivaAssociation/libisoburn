@@ -105,7 +105,7 @@ doxygen doc/doxygen.conf
 %{_bindir}/xorrisofs
 %{_bindir}/xorriso-tcltk
 %{_mandir}/man1/xorriso.1*
-%{_mandir}/man1/xorriso-tcltk.1.xz
+%{_mandir}/man1/xorriso-tcltk.1.*
 %{_mandir}/man1/xorrisofs.1*
 %{_mandir}/man1/xorrecord.1*
 %{_infodir}/xorriso.info*
