@@ -4,12 +4,12 @@
 
 Summary:	Enables creation and expansion of ISO-9660 filesystems
 Name:		libisoburn
-Version:	1.5.2
+Version:	1.5.4
 Release:	1
 Group:		System/Libraries
 License:	GPLv2+
-Url:		http://libburnia-project.org
-Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
+Url:		https://dev.lovelyhq.com/libburnia/libisoburn
+Source0:	https://dev.lovelyhq.com/libburnia/libisoburn/archive/release-%{version}.tar.gz
 
 BuildRequires:	doxygen
 BuildRequires:	acl-devel
@@ -73,15 +73,32 @@ file attribute recording and its incremental update sessions. Optical
 supported media: CD-R, CD-RW, DVD-R, DVD-RW, DVD+R, DVD+R DL, DVD+RW,
 DVD-RAM, BD-R and BD-RE.
 
+%package -n xorriso-tcltk
+Summary:	TCL/Tk frontend for the Xorriso ISO-9660 image manipulation tool
+Group:		Archiving/Cd burning
+Requires:	xorriso = %{EVRD}
+
+%description -n xorriso-tcltk
+A TCL/Tk based frontend for the Xorriso ISO-9660 image manipulation tool.
+
+Xorriso is a program which copies file objects from POSIX compliant
+filesystems into Rock Ridge enhanced ISO-9660 filesystems and allows
+session-wise manipulation of such filesystems. It can load management
+information of existing ISO images and it writes the session results
+to optical media or to filesystem objects. Vice versa xorriso is able
+to copy file objects out of ISO-9660 filesystems.
+
+Filesystem manipulation capabilities surpass those of mkisofs. Xorriso
+is especially suitable for backups, because of its high fidelity of
+file attribute recording and its incremental update sessions. Optical
+supported media: CD-R, CD-RW, DVD-R, DVD-RW, DVD+R, DVD+R DL, DVD+RW,
+DVD-RAM, BD-R and BD-RE.
+
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}
+%configure --enable-pkg-check-modules
 
 %build
-touch NEWS
-
-autoreconf -fi
-
-%configure --disable-static --enable-pkg-check-modules
 %make_build LIBS='-lpthread -lreadline'
 doxygen doc/doxygen.conf
 
@@ -102,13 +119,18 @@ doxygen doc/doxygen.conf
 %{_bindir}/osirrox
 %{_bindir}/xorrecord
 %{_bindir}/xorriso
+%{_bindir}/xorriso-dd-target
 %{_bindir}/xorrisofs
-%{_bindir}/xorriso-tcltk
 %{_mandir}/man1/xorriso.1*
-%{_mandir}/man1/xorriso-tcltk.1.*
+%{_mandir}/man1/xorriso-dd-target.1*
 %{_mandir}/man1/xorrisofs.1*
 %{_mandir}/man1/xorrecord.1*
 %{_infodir}/xorriso.info*
-%{_infodir}/xorriso-tcltk.info*
+%{_infodir}/xorriso-dd-target.info*
 %{_infodir}/xorrecord.info*
 %{_infodir}/xorrisofs.info*
+
+%files -n xorriso-tcltk
+%{_bindir}/xorriso-tcltk
+%{_mandir}/man1/xorriso-tcltk.1.*
+%{_infodir}/xorriso-tcltk.info*
