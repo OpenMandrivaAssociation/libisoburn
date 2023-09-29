@@ -4,8 +4,8 @@
 
 Summary:	Enables creation and expansion of ISO-9660 filesystems
 Name:		libisoburn
-Version:	1.5.4
-Release:	2
+Version:	1.5.6
+Release:	1
 Group:		System/Libraries
 License:	GPLv2+
 Url:		https://dev.lovelyhq.com/libburnia/libisoburn
