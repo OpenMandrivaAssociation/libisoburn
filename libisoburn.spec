@@ -11,6 +11,11 @@ License:	GPLv2+
 Url:		https://dev.lovelyhq.com/libburnia/libisoburn
 Source0:	https://dev.lovelyhq.com/libburnia/libisoburn/archive/release-%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(libacl)
 BuildRequires:	pkgconfig(readline)
