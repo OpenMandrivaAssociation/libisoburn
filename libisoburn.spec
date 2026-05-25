@@ -4,7 +4,7 @@
 
 Summary:	Enables creation and expansion of ISO-9660 filesystems
 Name:		libisoburn
-Version:	1.5.8
+Version:	1.5.8.pl02
 Release:	1
 Group:		System/Libraries
 License:	GPLv2+
@@ -20,8 +20,8 @@ BuildRequires:	doxygen
 BuildRequires:	pkgconfig(libacl)
 BuildRequires:	pkgconfig(readline)
 BuildRequires:	pkgconfig(glib-2.0)
-BuildRequires:	pkgconfig(libburn-1) >= %{version}
-BuildRequires:	pkgconfig(libisofs-1) >= %{version}
+BuildRequires:	pkgconfig(libburn-1) >= %(echo %{version} |cut -d. -f1-3)
+BuildRequires:	pkgconfig(libisofs-1) >= %(echo %{version} |cut -d. -f1-3)
 BuildRequires:	pkgconfig(zlib)
 
 %package -n %{libname}
