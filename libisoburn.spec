@@ -58,8 +58,8 @@ Summary:	ISO-9660 and Rock Ridge image manipulation tool
 Group:		Archiving/Cd burning
 Requires:	%{libname} = %{EVRD}
 # (tpg) looks like these two are needed
-Requires:	%{_lib}isofs6 >= %{version}
-Requires:	%{_lib}burn4 >= %{version}
+Requires:	%{_lib}isofs6 >= %(echo %{version} |cut -d. -f1-3)
+Requires:	%{_lib}burn4 >= %(echo %{version} |cut -d. -f1-3)
 
 Obsoletes:	xorriso-isoburn < %{EVRD}
 Provides:	xorriso-isoburn = %{EVRD}
